@@ -9,6 +9,12 @@ get('/') do
   erb(:input)
 end
 
+get('/favorite_things/:id') do
+  @item = Item.find(params[:id])
+  erb(:output)
+end
+
+
 post('/') do
   name = params["name"]
   item = Item.new(name)
