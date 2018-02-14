@@ -15,17 +15,12 @@ get('/favorite_things/:id') do
   erb(:output)
 end
 
-get('/favorite_things/:rank') do
-  @item = Item.rank(params[:rank])
-  erb(:output)
-end
-
-
 post('/') do
   name = params["name"]
-  item = Item.new(name)
-  # item.rank()
+  rank = params["rank"]
+  item = Item.new(name,rank)
   item.save()
+  # Item.sort()
   @list = Item.all()
   erb(:input)
 end

@@ -60,7 +60,7 @@ describe("Item") do
       item2.save()
       item3 = Item.new("pear",3)
       item3.save()
-      expect(Item.sort(1)).to(eq([item2, item, item3]))
+      expect(Item.sort()).to(eq([item2, item, item3]))
       # expect(Item.sort(2)).to(eq(item))
 
     end

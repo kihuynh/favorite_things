@@ -18,6 +18,7 @@ class Item
 
   def save()
     @@list.push(self)
+    # @@list = @@list.sort_by{ |item| item.rank}
   end
 
   def self.clear()
@@ -33,7 +34,8 @@ class Item
     end
   end
 
-  def self.sort(rank)
-    @@list.sort_by{ |item| item.rank}
+  def self.sort()
+    @@list.sort_by!{ |item| item.rank}
   end
+
 end
