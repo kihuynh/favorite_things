@@ -4,12 +4,12 @@ class Item
   @@list = []
   attr_reader :id
   attr_accessor :name
-# attr_accessor :rank
+  attr_accessor :rank
 
-  def initialize(name)
+  def initialize(name,rank)
     @name = name
-    #@rank = rank
     @id = @@list.length + 1
+    @rank = rank
   end
 
   def self.all()
@@ -33,7 +33,7 @@ class Item
     end
   end
 
-  # def self.sort()
-  #@@list sort_by! = |item| item.rank/id/whatever
-  #end
+  # def self.sort(rank)
+  # @@list.sort_by{|item| item.rank}
+  # end
 end
