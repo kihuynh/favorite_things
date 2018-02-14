@@ -2,11 +2,12 @@
 
 class Item
   @@list = []
-
+  attr_reader :id
   attr_accessor :name
 
   def initialize(name)
     @name = name
+    @id = @@list.length + 1
   end
 
   def self.all()
@@ -16,13 +17,19 @@ class Item
   def save()
     @@list.push(self)
   end
-  
+
   def self.clear()
     @@list = []
   end
 
-  # def self.find(name)
-  # end
-  #
+  def self.find(name)
+    item_id = id.to_i()
+    @@list.each do |item|
+      if item.id == item_id
+        return item
+      end
+    end
+  end
+
   # def method_name()
 end
