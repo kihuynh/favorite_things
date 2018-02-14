@@ -4,9 +4,11 @@ class Item
   @@list = []
   attr_reader :id
   attr_accessor :name
+# attr_accessor :rank
 
   def initialize(name)
     @name = name
+    #@rank = rank
     @id = @@list.length + 1
   end
 
@@ -31,5 +33,7 @@ class Item
     end
   end
 
-  # def method_name()
+  # def self.sort()
+  #@@list sort_by! = |item| item.rank/id/whatever
+  #end
 end

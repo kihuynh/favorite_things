@@ -52,4 +52,16 @@ describe("Item") do
     end
   end
 
+  describe('.sort') do
+    it ("ranks the item") do
+      item2 = Item.new("apple")
+      item.save()
+      item1 = Item.new("blueberry")
+      item.save()
+      expect(Item.sort(2)).to(eq(item2))
+      expect(Item.sort(1)).to(eq(item1))
+
+    end
+  end
+
 end
