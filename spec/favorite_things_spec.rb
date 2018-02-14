@@ -3,6 +3,10 @@ require('favorite_things')
 require('pry')
 
 describe("Item") do
+  before() do
+    Item.clear()
+  end
+
   describe('.all') do
     it("is empty at first") do
     expect(Item.all()).to(eq([]))
@@ -19,7 +23,7 @@ describe("Item") do
 
   describe('.clear') do
     it("clears all items form the list") do
-      item = Item.new("taco")
+      item = Item.new("tacos")
       item.save()
       Item.clear()
       expect(Item.all()).to(eq([]))
