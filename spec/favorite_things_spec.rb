@@ -53,13 +53,15 @@ describe("Item") do
   end
 
   describe('.sort') do
-    it("ranks the items alphabetically") do
-      item1 = Item.new("blueberry", 2)
+    it("ranks the items by increasing rank number") do
+      item = Item.new("blueberry", 2)
       item.save()
       item2 = Item.new("apple", 1)
-      item.save()
-      expect(Item.sort(1)).to(eq(item2))
-      expect(Item.sort(2)).to(eq(item1))
+      item2.save()
+      item3 = Item.new("pear",3)
+      item3.save()
+      expect(Item.sort(1)).to(eq([item2, item, item3]))
+      # expect(Item.sort(2)).to(eq(item))
 
     end
   end

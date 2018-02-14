@@ -8,8 +8,8 @@ class Item
 
   def initialize(name,rank)
     @name = name
-    @id = @@list.length + 1
     @rank = rank
+    @id = @@list.length + 1
   end
 
   def self.all()
@@ -33,7 +33,7 @@ class Item
     end
   end
 
-  # def self.sort(rank)
-  # @@list.sort_by{|item| item.rank}
-  # end
+  def self.sort(rank)
+    @@list.sort_by{ |item| item.rank}
+  end
 end
